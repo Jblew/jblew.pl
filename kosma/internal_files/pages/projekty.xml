@@ -1,0 +1,27 @@
+<kosma-document title="Projekty" date="2013-05-04 10:11">
+    
+    <paragraph>
+        Tworzyłem dotychczas kilkanaście stron internetowych. Każda z nich posiada swoją własną historię, potrzeby, źródło inspiracji, każda jest oryginalna i niepowtarzalna. Wszystkie były doskonałymi przygodami, a projektowanie ich - przyjemnością. Przedstawiam je tutaj, także te, których realizacja nie doszła do skutku.
+    </paragraph>
+    
+    <titled-paragraph title="vervorris.net - dziennik programisty">
+        <image url="http://img.jblew.pl/portfolio/vervorris.net.png" width="100%" title="Vervorris.net" alt="Design strony Vervorris.net"/>
+    	  Jest to moje najnowsze "dziecko". Stronę wykonałem dla programisty, który zamierza aktywnie publikować w internecie. Strona jest jeszcze nie aktywna, podgląd można obejrzeć na stronie: <a href="http://vervorris.jblew.pl/">vervorris.jblew.pl</a>. Przy tworzeniu tego projektu kluczowym problemem było stworzenie loga, dopiero kolejnym krokiem było zaprojektowanie pasującego do niego designu. Wspólnie, jako atrybut loga wybraliśmy kruka. Jest to symbol wieloznaczny, często pojawiający się w literaturze. W symbolu Vervorris wprowadza lekki niepokój i skłania do przyjżenia się jego "zdobyczy" - literze V. Jako kontrast dla tego niepokojącego znaku, na stronie dominuje zieleń "nadzieji", w nagłówku i ciemna magenta podkreślająca nagłówki. Pozostała część strony zachowuje prostą surowość umożliwiającą czytelnikowi skupienie się na treści.
+    </titled-paragraph>
+    
+    <titled-paragraph title="Psychoterapia.sos.pl - strona firmowa Psychologa">
+        <image url="http://img.jblew.pl/psychoterapia.png" width="100%" title="Psychoterapia.sos.pl" alt="Design strony psychoterapia.sos.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Spskgryzliny.pl.sos.pl - katolicka szkoła podstawowa">
+        <image url="http://img.jblew.pl/spskgryzliny.png" width="100%" title="Spskgryzliny.pl" alt="Design strony spskgryzliny.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Anielaolsztynek.pl - ogłoszenia parafialne">
+        <image url="http://img.jblew.pl/aniela.png" width="100%" title="Anielaolsztynek.pl" alt="Design strony anielaolsztynek.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Spskolsztynek.pl - gimnazjum">
+        <image url="http://img.jblew.pl/spskolsztynek.png" width="100%" title="spskolsztynek.pl" alt="Design strony spskolsztynek.sos.pl"/>
+    </titled-paragraph>
+</kosma-document>

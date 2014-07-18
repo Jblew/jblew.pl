@@ -1,0 +1,186 @@
+ul.vernav li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.vernav li, ul.vernav li a, ul.vernav li a span {
+	display: block;
+	float: left;
+}
+
+.left {
+	display: block;
+	float: left;
+}
+
+.right {
+	display: block;
+	float: right;
+}
+
+#mainwrap {
+	text-align: center;
+}
+
+#main {
+	margin: 0 auto;
+	text-align: left;
+	width: 960px;
+	padding-top: 42px;
+}
+
+#leftcol, #rightcol {
+	overflow: hidden;
+	display: inline;
+}
+
+#leftcol {
+	width: 384px;
+	float: left;
+	height: 483px;
+	position: relative;
+}
+
+#home #rightcol {
+	width: 564px;
+	float: right;
+	height: 517px;
+	position: relative;
+}
+
+#home #rightcol .inner {
+
+}
+
+.flash-title {
+	height: 65px;
+	line-height: 65px;
+}
+
+.flash-title {
+	padding: 0px 65px;
+}
+.flash-title h2 {
+	font-size: 22px;
+	font-weight: normal;
+	display: block;
+	color: #1d485c;
+	overflow: hidden;
+	margin: 0;
+
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+.flash-title h2.sIFR-replaced
+{
+      visibility: hidden;
+      font-size: 12px;
+}
+
+.content {
+	font-size: 15px;
+	color: #666666;
+	line-height: 20px;
+	overflow: hidden;
+	padding: 20px 65px 35px 65px;
+	text-align: justify;
+}
+
+.content-bottom {
+	height: 41px;
+	text-align: right;
+	line-height: 41px;
+}
+
+a.readmore {
+	font-size: 12px;
+	color: #1d485c;
+}
+
+#widepage {
+	height:1%;
+	overflow: hidden;
+	margin-right: 21px;
+}
+#widepage .content {
+	font-size: 13px;
+	color: #666666;
+	line-height: 20px;
+	overflow: hidden;
+	padding: 20px 21px 0px 65px;
+	background: none;
+}
+.profile-details {
+	width: 120px;
+	background: #1d485c;
+	padding: 7px 8px;
+	float: left;
+	margin-right: 10px;
+	color: #fff;
+	font-size: 11px;
+}
+.profile-details a, .profile-details a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+.profile-left {
+	width: 539px;
+	float: left;
+}
+.profile-right {
+	width: 360px;
+	float: right;
+	margin-top: 7px;
+	padding: 0 20px 9px 20px;
+}
+.small-logo {
+	float: right;
+}
+.profile-videos {
+	padding-top: 35px;
+}
+.profile-right h3 {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 18px;
+	color: #fff;
+}
+.more-vids {
+	background: #bcc8ce;
+	margin-top: 10px;
+	padding: 10px 0 10px 10px;
+	overflow: hidden;
+	font-size: 11px;
+	line-height: 13px;
+	color: #1d485c;
+}
+.more-vids a, .more-vids a:visited {
+	color: #1d485c;
+	text-decoration: none;
+}
+.more-vid {
+	width: 80px;
+	float: left;
+	margin-right: 6px;
+}
+.wp-bottom {
+	height: 32px;
+}
+#widepage .content-bottom {
+	height: 41px;
+	text-align: right;
+	line-height: 41px;
+	margin-top: 63px;
+}
+#footer {
+	color: #999999;
+	font-size: 11px;
+	text-align: center;
+	line-height: 170%;
+}
+
+#footer a {
+	color: #d0d0d0;
+	text-decoration: none;
+}
+

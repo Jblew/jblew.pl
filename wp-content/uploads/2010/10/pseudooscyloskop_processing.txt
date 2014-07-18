@@ -1,0 +1,38 @@
+import processing.serial.*;
+
+Serial port;  // Create object from Serial class
+int val;      // Data received from the serial port
+int i;
+int lastval;
+void setup()
+{
+  size(1200, 480);
+  // Open the port that the board is connected to and use the same speed (9600 bps)
+  port = new Serial(this, Serial.list()[1], 9600);
+  i=0;
+  lastval = 0;
+  background(0);
+  stroke(255);
+}
+
+int getY(int val) {
+  return (int)(val / 1023.0f * height) - 1;
+}
+
+void draw()
+{
+  while (port.available() >= 3) {
+    if (port.read() == 0xff) {
+      val = (port.read() << 8) | (port.read());
+    }
+  }
+  i++;
+  if (i>=width-1) {
+    i=0;
+    background(0);
+    stroke(255);
+  }
+    line(width-i,   height-1-getY(lastval),
+         width-1-i, height-1-getY(val));
+    lastval = val;
+}

@@ -1,0 +1,148 @@
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head profile="http://gmpg.org/xfn/11"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<title>Test Css3: @font-face</title> 
+
+        <style type="text/css"> 
+		@font-face { font-family: Splywaj; src: url('Splywaj.eot'); }
+		@font-face { font-family: Splywaj; src: url('Splywaj.ttf'); }
+		@font-face { font-family: Ariendezze; src: url('ariendezze.eot'); }		
+		@font-face { font-family: Ariendezze; src: url('ariendezze.ttf'); }
+        	body {
+        		background-color: #ddd;
+        		color: black;
+        		margin: 0;
+        		padding: 0;
+        	}
+        	#header {
+        		width: 100%;
+        		background-color: #ccc;
+        		padding: 20px;
+        		font-family: sans-serif;
+        		border: 0;
+        		border-bottom: 2px solid #aaa;
+        	}
+        	#header h1 {
+        		padding: 0;
+        		margin: 0;
+        		font-size: 25px;
+        		color: #333;
+        	}
+        	#header p {
+        		margin: 0;
+        		padding: 0;
+        		padding-top: 5px;
+        		font-size: 12px;
+        		letter-spacing: 2px;
+        	}
+        	#menu {
+        		margin: 0;
+        		padding: 0;
+        		float: right;
+        		padding-right: 35px;
+        	}
+        	#menu a {
+        		margin: 0;
+        		padding: 0;
+        		padding-right: 10px;
+        		font-size: 15px;
+        		color: black;
+        		text-decoration: underline;
+        	}
+        	#menu a:hover {
+        		text-decoration: none;
+        	}
+        	#content {
+        		border: 1px solid gray;
+        		background: white;
+        		width: 800px;
+        		padding: 15px;
+        		margin: 0 auto;
+        		margin-top: 100px;
+        		text-align: center;
+        	}
+        	#content h2 {
+        		color: #eeaa00;
+        		font-family: sans-serif;
+        		font-size: 25px;
+        		width: 100%;
+        		border-bottom: 1px solid #eeaa00;
+        		padding: 0;
+        		margin: Ariendezze0;
+        		padding-left: 6px;
+        		text-align: left;
+        	}
+        	#content .news_meta {
+        		margin-bottom: 45px;
+        		color: #444;
+        		font-family: sans-serif;
+        		font-size: 13px;
+        	}
+        	#content .news_p {
+        		margin-bottom: 0;
+        		padding-bottom: 0;
+        		text-align: justify;
+        	}
+        	#footer {
+        		padding: 0;
+        		padding-top: 100px;
+        		font-size: 10px;
+        		color: #444;
+        		width: 800px;
+        		margin: 0 auto;
+        		text-align: center;
+        	}
+        	.headera {
+        	    color: #333;
+        	    font-family: sans-serif;
+        	    font-size: 25px;
+        	    text-decoration: none;
+        	}
+        	.bez_wyroznienia {
+        	    color: #222;
+        	}
+        	.wyroznienie {
+        	    font-weight: bold;
+        	    color: #000;
+        	}
+
+		#splywaj_test {
+			font-family: Splywaj, sans-serif;
+			font-size: 2em;
+		}
+
+		#ariendezze_test {
+			font-family: Ariendezze, sans-serif;
+			font-size: 2em;
+		}
+        </style> 
+    </head> 
+    <body> 
+        <div id="header"> 
+            <h1><a class="headera" href="#">Test Css3: @font-face</a></h1> 
+        </div>  
+        <div id="content"> 
+    <h2>Test Css3: @font-face</h2> 
+    <p> 
+        <h3>Czcionka Spływaj: </h3>
+	<p>Jako @font-face: <span id="splywaj_test">Lorem ipsum dolor sit amet.</span></p>
+	<p>Jako Obrazek: <img src="splywaj.png" /></p>
+<br /><br />
+    </p>
+
+    <p> 
+        <h3>Czcionka Ariendezze: </h3>
+	<p>Jako @font-face: <span id="ariendezze_test">Lorem ipsum dolor sit amet.</span></p>
+	<p>Jako Obrazek: <img src="ariendezze.png" /></p>
+    </p>
+    </div> 
+        <div id="footer"> 
+        	<p> 
+        	&copy; Copyright 2011 by <a href="http://jblew.pl/">Jblew</a>.
+        	</p> 
+        </div> 
+</body> 
+</html> 

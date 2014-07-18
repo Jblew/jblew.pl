@@ -1,0 +1,321 @@
+/*
+Theme Name: JBlew.ovh.org
+Description: JBlew.ovh.org theme
+Tags: dark, white, two-columns, fixed-width, left-sidebar, shadow
+Version: 1.00
+Author: JBlew
+*/
+	body {
+		margin: 0;
+		padding: 0;
+		background: #393939 url(images/bgline.png) repeat-y top center;
+	}
+	#maincontainer {
+		padding: 0;
+		margin: 0 auto;
+		max-width: 1024px;
+		background: url(images/header_rp3.jpg) no-repeat top center;
+		padding-top: 0px;
+	}
+	#ctdiv {
+		margin: 0 auto;
+		padding: 0;
+		background: transparent;
+		width: 780px;
+		padding-top: 45px;
+	}
+	#contentcontainer {
+		width: 570px;
+		float: left;
+		padding: 25px;
+		text-align: justify;
+		vertical-align: top;
+	}
+	#rightmenu {
+		width: 150px;
+		vertical-align: top;
+		text-align: center;
+		margin-left: 10px;
+	}
+	#rightmenu .widget {
+		padding: 0;margin: 0;
+		padding-bottom: 25px;
+	}
+	#rightmenu h3 {
+		text-align: right;
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		font-size: 1.1em;
+		font-family: sans-serif;
+		border-bottom: 1px solid gray;
+		margin-bottom: 5px;
+	}
+	#rightmenu ul {
+		padding: 0;margin: 0;
+		list-style-type: none;list-style: none;
+	}
+	#rightmenu ul li {
+		padding: 0;margin: 0;
+		list-style-type: none;list-style: none;
+	}
+	a {
+		text-decoration: underline;
+		color: #551b0e;
+		font-family: sans-serif;
+	}
+	a:hover {
+		text-decoration: none;
+		background: #551b0e;
+		color: white;
+	}
+	a.more-link {
+		text-decoration: none;
+		background: #551b0e;
+		color: white;
+	}
+	.more-link:hover  {
+		text-decoration: underline;
+		color: #551b0e;
+		font-family: sans-serif;
+	}
+	#contentcontainer h1 {
+		color: #551b0e;
+		font-family: sans-serif;
+		font-size: 1.6em;
+		padding-bottom: 0px;
+		border-bottom: 1px solid #551b0e;
+		padding-left: 10px;
+	}
+	
+	#contentcontainer h2.wtitle {
+		color: #551b0e;
+		font-family: sans-serif;
+		font-size: 1.6em;
+		padding-bottom: 0px;
+		border-bottom: 1px solid #551b0e;
+		padding-left: 10px;
+	}
+	
+	.post-meta {
+		border-top: 1px dashed #bbb;
+		margin-top: 15px;
+		padding: 0;
+	}
+	a.tagsz-1 { font-size: 10px;  }
+	a.tagsz-2 { font-size: 13px; }
+	a.tagsz-3 { font-size: 16px; }
+	a.tagsz-4 { font-size: 18px; }
+	a.tagsz-5 { font-size: 21px; }
+	#headerclicker {
+		width: 100%;
+		height: 100px;
+		padding: 0;margin: 0;
+		vertical-align: top !important;
+		top: 0;
+		display: inline;
+	}
+	#headerclicker a {
+		width: 100%;
+		height: 100px;
+		padding: 0;margin: 0;
+		vertical-align: top !important;
+		top: 0;
+		display: inline;
+		color: white;
+		text-decoration: none;
+		color: black;
+		font-size: 0.3em;
+		padding-left: 100px;
+	}
+	#headerclicker div {
+		width: 100%;
+		height: 100px;
+		padding: 0;margin: 0;
+		vertical-align: top !important;
+		top: 0;
+	}
+	input#s {
+		width: 150px;
+	}
+	#searchform label {
+		display: none;visibility: hidden;
+	}
+	#bottom {
+		width: 1026px;
+		height: 137px;
+		background: #393939 url(images/bottom.png) no-repeat top center;
+		color: white;
+		padding: 5px;
+		font-size: 0.8em;
+		padding-top: 15px;
+		text-align: center;
+		margin: 0 auto;
+	}
+	h2 {
+		padding: 0;margin: 0;
+		color: #551b0e;
+		font-family: sans-serif;
+		font-size: 1.4em;
+		padding-bottom: 0px;
+		text-align: left;
+	}
+	h2 a {
+	    text-decoration: none;
+	    text-align: left;
+	}
+	h3 {
+		padding: 0;margin: 0;
+		color: #551b0e;
+		font-family: sans-serif;
+		font-size: 1.1em;
+		padding-bottom: 0px;
+		text-align: left;
+	}
+	
+	
+	/*COMMENTS*/
+	.quote p {
+		padding: 0;margin: 0;
+		padding: 15px;
+		padding-bottom: 25px;
+		background: #e8e8e8 url(images/commentbottom.gif) no-repeat bottom left;
+	}
+	.commentlist {
+		padding: 0;margin: 0;
+		list-style-type: none;list-style: none;
+		padding-left: 20px;
+		color: #333;
+	}
+	.commentlist li {
+		padding: 0;margin: 0;
+		padding-top:  25px;
+		list-style-type: none;list-style: none;
+	}
+	.commentlist cite {
+		font-size: 0.9em;
+	}
+	.commentlist cite a {
+		font-size: 0.9em;
+	}
+	
+	.tweet {
+	    color: #2276bb;
+	    font-size: 17px;
+	}
+	
+	.twitter-img {
+	    background: url(images/twitter.png) no-repeat;
+	    height: 58px;
+	    padding-left: 62px;
+	}
+	
+	.twitter-noimg {
+	    padding-left: 31px;
+	}
+	
+	.tweet_link {
+	    color: #2276bb;
+	    font-size: 17px;
+	}
+	
+	.tweet_link:hover {
+	    text-decoration: underline;
+	    color: #2276bb;
+	    font-size: 17px;
+	    background: transparent;
+	}
+	
+	.tweet .tweet_date {
+	    font-size: 14px;
+	    color: gray;
+	}
+	.tweet .tweet_twitter {
+	    font-size: 14px;
+	    color: #81adc3;
+	}
+	
+	.widget ul li.cat-item {
+	    text-align: left;
+	}
+	.widget ul li.cat-item a {
+	    padding-left: 3px;
+	}
+
+.code-block {font-family: monospaced; width: 100%; overflow: auto;}
+.code-block .ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.code-block.comment {color: #969696}
+.code-block .line-number {background-color: #e9e8e2}
+.code-block .keyword-directive {color: #0000e6}
+
+	/*
+	
+	#m #ln #tresc h2 {
+		color: #4e00ff;
+		font-family: sans-serif;
+		font-size: 1.4em;
+		padding-bottom: 0px;
+	}
+	#m #ln #tresc h3 {
+		color: #4e00ff;
+		font-family: sans-serif;
+		font-size: 1.1em;
+		padding-bottom: 0px;
+	}
+	#m #ln #tresc li.alt {
+		border: 1px solid #ddd;
+		margin: 10px;
+	}
+	#m #ln #tresc li.alt.str {
+		border: 1px solid red !important;
+	}
+	#m #ln #tresc li.alt p {
+		border: 1px solid #ddd;
+		margin: 0;
+		padding: 5px;
+	}
+	#m #ln #tresc li.alt .commentmetadata {
+		border: 1px solid #ddd;
+	}
+	#m #ln #tresc li.alt .commentmetadata .avatar {
+		display: inline;
+		float: left;
+	}
+	#m #header #top {
+		padding-top: 18px;
+		margin-top: 0;
+		width: 100%;
+	}
+	#m #header #top #left {
+		width: 50%;
+		padding-left: 28px;
+	}
+	#m #header #top #right {
+		width: 50%;
+		text-align: right;
+		padding-right: 28px;
+	}
+	#m #ln #tresc .post-meta {
+		border-top: 1px dashed #bbb;
+		margin-top: 15px;
+		padding: 0;
+	}
+	#m #ln #tresc blockquote {
+		border-left:8px solid #6000ff;
+		background: #dddaff;
+		padding: 0;
+		padding-left: 10px;
+	}
+	#m #ln #tresc a {
+		font-family: sans-serif;
+	}
+	#m #ln .more-link {
+		color: red;
+		font-weight: 900;
+		font-family: sans-serif;
+	}
+
+	input#s {
+		width: 150px;
+	}
+*/

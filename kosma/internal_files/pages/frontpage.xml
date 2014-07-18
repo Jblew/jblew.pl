@@ -1,0 +1,30 @@
+<kosma-document title="Witaj!" date="2013-04-30">
+    
+    <paragraph>
+        <kosma-include-file path="projekty.xml" />
+        Programowanie i webdesign to moja pasja. Zajmuję się tym od dzieciństwa, z każdym kolejnym projektem zdobywając coraz większe doświadczenie i swobodę w tworzeniu dzieł sztuki użytkowej, jakimi są strony internetowe, a także poezji spisanej w formie kodu.
+    </paragraph>
+    <paragraph>
+        Tworzę strony proste i praktyczne. Nastawione na prezentowanie informacji. Design jest związany z tematyką strony, krórej głównym zadaniem jest przekazanie użytkownikowi informacji o organizacji. Poniżej przedstawiam kilka moich projektów (nowsze u góry). Zapraszam do obejrzenia <link url="/page/projekty"> pozostałych projektów</link> oraz <link url="/page/metodyka-pracy">metodyki mojej pracy.</link>
+    </paragraph>
+    
+    <!--<titled-paragraph title="Jblew.pl - portfolio">
+        <image url="http://img.jblew.pl/jblew.png" width="100%" title="Jblew.pl" alt="Design strony Jblew.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Psychoterapia.sos.pl - strona firmowa Psychologa">
+        <image url="http://img.jblew.pl/psychoterapia.png" width="100%" title="Psychoterapia.sos.pl" alt="Design strony psychoterapia.sos.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Spskgryzliny.pl.sos.pl - katolicka szkoła podstawowa">
+        <image url="http://img.jblew.pl/spskgryzliny.png" width="100%" title="Spskgryzliny.pl" alt="Design strony spskgryzliny.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Anielaolsztynek.pl - ogłoszenia parafialne">
+        <image url="http://img.jblew.pl/aniela.png" width="100%" title="Anielaolsztynek.pl" alt="Design strony anielaolsztynek.pl"/>
+    </titled-paragraph>
+    
+    <titled-paragraph title="Spskolsztynek.pl - gimnazjum">
+        <image url="http://img.jblew.pl/spskolsztynek.png" width="100%" title="spskolsztynek.pl" alt="Design strony spskolsztynek.sos.pl"/>
+    </titled-paragraph>-->
+</kosma-document>

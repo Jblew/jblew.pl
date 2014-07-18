@@ -1,0 +1,81 @@
+/* jMUD Example CSS */
+
+/* Element Styling */
+body {
+	background-color: #000;
+	color: #ccc;
+	margin: 0;
+	font-size: 75%;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+#heading {
+	margin-bottom: 10px;
+	border-bottom: 1px solid;
+}
+
+#heading h1 {
+	float: left;
+	margin: 0;
+	line-height: 1em;
+}
+
+#heading span {
+	margin-left: 10px;
+	line-height: 2em;
+}
+
+h2 { margin: 0; }
+
+a           		{ text-decoration: none; color: #3F92D2; }
+a:focus,a:hover { text-decoration: underline; }
+
+code {
+	margin: 10px 5px;
+	display: block;
+	background: #111;
+	color: #fff;
+	padding: 5px;
+	border: 1px dashed #ccc;
+	font-size: 12px;
+}
+
+.clear { clear: both; }
+
+#content {
+	margin: 0 auto;
+	min-width: 960px;
+	max-width: 100%;
+	padding: 10px;
+}
+
+.mud-input-blur {
+	color: #606060 !important;
+}
+
+.mud-title {
+	padding-bottom: 2px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid;
+}
+
+.mud-pane {
+	height: 400px;
+	overflow: auto;
+	overflow-y: scroll;
+	font-family:"Courier New",monospace;
+	font-size: 12px;
+	margin-bottom: 5px;
+}
+
+.mud-input {
+	font-family:"Courier New",monospace;
+	font-size: 12px;
+	width: 100%;
+	padding-top: 2px;
+	border: none;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #222;
+	background: none;
+	color: #fff;
+}

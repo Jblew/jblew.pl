@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+<pre>
+====Edytor krain====
+   +AEDITOR [bez parametrow] - edytuj kraine, w której się znajdujesz.
+   +AEDITOR [vnum]           - edytuj krainę [vnum].
+   +AEDITOR list             - lista krain.
+   +AEDITOR create [vnum]    - stwórz krainę [vnum].
+   +AEDITOR delete [vnum]    - usuń krainę [vnum].
+   
+   Komendy edycji:
+      +name [tekst]          - zmienia nazwę krainy.
+      +vnum [od] [do]        - ustawia zakres roomów w krainie.
+      +tick [num]            - ustawia częstotliwość resetów w krainie na [num].
+      +type [nazwa_typu]     - zmienia domyślny typ krainy na [nazwa_typu].
+      +done                  - kończy edycję i zamyka edytor.
+   
+
+====Edytor lokalizacji====   
+   +REDITOR [bez parametrow] - edytuj lokalizację, w której się znajdujesz.
+   +REDITOR [vnum]           - edytuj lokalizację [vnum].
+   +REDITOR list             - lista lokalizacji.
+   +REDITOR create [vnum]    - stwórz lokalizację [vnum].
+   +REDITOR delete [vnum]    - usuń lokalizację [vnum].
+   
+   Komendy edycji:
+      +name [tekst]          - zmienia nazwę lokalizacji.
+      +desc                  - wchodzi w tryb edycji opisu.
+      +sign [tekst]          - ustawia znak na mapie na [tekst].
+      +feature [nazwa cechy] - ustawia, lub usuwa cechę [nazwa cechy]. W tej chwili dostępne są cechy: [local_weather, always_bright, always_dark, rent]. Aby zobaczyć listę cech wpisz 'feature' z nazwą nieistniejącej cechy. Komunikat błędu będzie zawierał istniejące cechy.
+      +addreset [vnum]       - dodaje reset [vnum]
+      +delreset [vnum]       - usuwa reset vnum
+      +type [nazwa_typu]     - zmienia typ rooma na [nazwa_typu].
+      
+      +north link [vnum]     - tworzy przejście do lokalizacji [vum] na północ.
+      +north link            - usuwa północne przejście.
+      +north type [typ]      - ustawia typ przejścia północnego na [typ].
+      +north name [tekst]    - zmienia nazwę północnego przejścia na [tekst].
+      +done                  - kończy edycję i zamyka edytor.
+</pre>

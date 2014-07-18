@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jMUD MUD Client</title>
+<link rel="stylesheet" type="text/css" href="media/css/layout.css" />
+<link rel="stylesheet" type="text/css" href="media/css/mud-colors.css" />
+<script src="media/js/jquery.js" type="text/javascript"></script>
+<script src="media/js/xregexp-min.js" type="text/javascript"></script>
+<script src="media/js/swfobject.js" type="text/javascript"></script>
+<script src="media/js/jsocket.js" type="text/javascript"></script>
+<script src="media/js/jquery.mud.js" type="text/javascript"></script>
+<script src="media/js/jmud.command.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(function(){
+  // Create an options array to tell the MUD about our input box.
+  // Note: giving the hostname isn't necessary. If it's missing, Flash
+  // will connect to the server that served the files.
+  var options = {
+    'hostname'	: 'fourworlds.kicks-ass.net',
+    'port'			: 5446,
+    
+    'id_input'	: 'socket-input',
+    'id_title'	: 'socket-title'
+  };
+
+  // Create the MUD using our options.
+  var jmud = $("#socket-output").mud(options);
+
+	jmud.bind('onText', function(e) {
+		// Skip the do we want ANSI question. It's unnecessary.
+		if (e.text == 'Do you want ANSI? (Y/n) ')
+		{	// Gag the line.
+			e.preventDefault();
+			// Send a Y to the server silently.
+			e.jmud.send('Y',true,true);
+		}
+	});
+  
+});
+
+</script>
+</head>
+<body>
+
+<div id="socket"></div>
+<div id="content">
+	<div id="heading">
+		<h1>jMUD v0.6.5</h1>
+		<span>HTML/CSS + JavaScript + Flash = MUD</span>
+		<div class="clear"></div>
+	</div>
+  
+	<div id="left" style="width:50%; float:left"><div style="padding-right: 5px">
+		<h2>Introduction</h2>
+		<p>jMUD by Stendec &lt;<a href="mailto:stendec365@gmail.com">stendec365@gmail.com</a>&gt;</p>
+
+		<p>jMUD is a MUD client that's implemented almost entirely in JavaScript, only relying on a small Flash file
+		for socket functionality (as JavaScript doesn't have sockets).</p>
+
+		<p>jMUD has full support for ANSI and XTERM color sequences, including support
+		for background colors, and allows the use of ANSI escape codes to clear the screen. In addition, using a
+		plugin, jMUD has nearly full support for MXP, lacking support for line tags, FLAG=, frames, MSP, automatic
+		generation of gauges and status text (that's the webmaster's job), and server relocation.</p>
+		
+		<p>Sorry for not having an example server to demonstrate MXP, but I did take a
+		<a href="http://img.photobucket.com/albums/v316/Stendec/MUD/WebMXP-2.png">screenshot</a>.</p>
+
+		<p>New in version 0.6, jMUD supports multiple output elements. Check out the multi-output example below to
+		see it in action.</p>
+
+		<p>jMUD handles telnet option negotiations, and currently has support for the following options:</p>
+		
+		<ul>
+			<li><a href="http://www.faqs.org/rfcs/rfc1073.html">Negotiate About Window Size</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc1091.html">Terminal Type</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc885.html">End of Record</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc1572.html">New Environ</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc1184.html">Linemode</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc858.html">Suppress Go Ahead</a></li>
+			<li><a href="http://www.faqs.org/rfcs/rfc857.html">Echo</a></li>
+			<li><a href="http://tintin.sourceforge.net/msdp/">MSDP - MUD Server Data Protocol</a></li>
+			<li><a href="http://tintin.sourceforge.net/mssp/">MSSP - MUD Server Status Protocol</a></li>
+			<li><a href="http://www.zuggsoft.com/zmud/mxp.htm">MXP - MUD eXtension Protocol (via Plugin)</a></li>
+			<li><a href="http://zmp.sourcemud.org/spec.shtml">ZMP - Zenith MUD Protocol (via Plugin)</a></li>
+		</ul>
+		
+		<p>In addition, you can add support for your own telnet options using events. jMUD
+		will automatically refuse any telnet option that it doesn't recognize and that
+		isn't handled by an event handler.</p>
+
+		<p>jMUD works together with jQuery to make things as easy as possible for the end
+		developer, so if you've never used jQuery, I recommend reading up on it and its
+		tutorials. Creating a fresh jMUD instance is as simple as:</p>
+		
+		<p><code>$("#my-element").mud();</code></p>
+
+		<p>Setting up a plugin for jMUD is easy too. See the command plugin (jmud.command.js)
+		to see how easy it is. The command plugin, by the way, can be extended with your own
+		commands and configuration options.</p>
+
+		<p>See the provided HTML documents for examples on how to get started using jMUD.</p>
+
+		<h2>Examples</h2>
+		<p><a href="example-basic.html">Basic Example</a><br />
+			A basic example. The most basic there is.</p>
+		<p><a href="example-event.html">Events Example</a><br />
+		  An events example that shows off jMUD recieving variables via MSDP from QuickMUD. (It took maybe 5 minutes to mod QuickMUD to send MSDP variables with the prompt.)</p>
+		<p><a href="example-split.html">Split-Screen Example (Multiple jMUDs)</a><br />
+			Multiple jMUDs, no hassle.</p>
+		<p><a href="example-command.html">Commands Example</a><br />
+			How to load the command plugin and set an option for it.</p>
+		<p><a href="example-mxp.html">MXP Example</a><br />
+			Kinda useless since my demo server doesn't support MXP.</p>
+		<p><a href="example-zmp.html">ZMP Example</a><br />
+			Demonstrates creation of new commands for the ZMP plugin.</p>
+		<p><a href="example-multi.html">Multi-Output Example</a><br />
+			Demonstrates sending output to multiple elements.</p>
+
+		<h2>Available Plugins</h2>
+		<p>jMUD is fairly new so there's not much yet. If you write a plugin, <a href="mailto:stendec365@gmail.com">e-mail me</a> and
+		I'll add it to the list.</p>
+		<ul>
+			<li><a href="media/js/jmud.command.js">jMUD Command Core</a> by Stendec<br />
+			Adds client commands for editing preferences.</li>
+			<li><a href="media/js/jmud.mxp.js">jMUD MXP Processor</a> by Stendec<br />
+			Adds support for MXP.</li>
+			<li><a href="media/js/jmud.zmp.js">jMUD ZMP Core</a> by Stendec<br />
+			Adds support for ZMP.</li>
+		</ul>
+
+		<h2>jMUD in Use</h2>
+		<p>As far as I know, no one is using jMUD yet... it makes me sad. But it <i>is</i> fairly new, so...</p>
+		<p>If you use jMUD for your MUD, please let me know. I'll link to it.</p>
+
+		<h2>Downloads</h2>
+		<p>2009-09-21 - <a href="jMUD%20v0.6.5.zip">jMUD v0.6.5</a></p>
+		<p>2009-09-21 - <a href="jMUD%20v0.6.2.zip">jMUD v0.6.2</a></p>
+		<p>2009-09-21 - <a href="jMUD%20v0.6.1.zip">jMUD v0.6.1</a></p>
+		<p>2009-09-20 - <s>jMUD v0.6</s></p>
+		<p>2009-09-19 - <a href="jMUD%20v0.5.zip">jMUD v0.5</a></p>
+		<p>2009-09-17 - <a href="jMUD%20v0.4.zip">jMUD v0.4</a></p>
+		<p>2009-09-16 - <a href="jMUD%20v0.3.zip">jMUD v0.3</a></p>
+		<p>2009-09-14 - <a href="jMUD%20v0.2.zip">jMUD v0.2</a></p>
+		<p>2009-09-13 - <a href="jMUD%20v0.1.zip">jMUD v0.1</a></p>
+
+		<h2>Contact</h2>
+		<p>E-mail me at <a href="mailto:stendec365@gmail.com">stendec365@gmail.com</a> or catch me on AIM or YIM at stendec365.</p>
+
+		<br />
+	</div></div>
+	
+	<div id="right" style="width:50%; float:left"><div style="padding-left: 5px">
+		<div class="mud-title">
+			jMUD v0.6 Basic Example - <span id="socket-title"></span>
+			<span id="socket-toolbar"></span>
+		</div>
+		<div class="mud-pane" id="socket-output">This connects to a simple QuickMUD mud to demonstrate the power of jMUD.<br /></div>
+		<input style="width:100%" class="mud-input" type="text" id="socket-input" />
+	</div></div>
+  
+</div>
+
+</body>
+</html>

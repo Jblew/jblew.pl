@@ -1,0 +1,123 @@
+Telnet Proxy Daemon
+===================
+
+Copyright (C) 2004  AwesomePlay Productions, Inc.
+See COPYING for license details.
+
+Introduction
+------------
+
+The Telnet Proxy Daemon is a simple threaded service that allows clients
+to connect to the service and proxy through to another service on a remote
+host.
+
+While the daemon can pass through any sort of connection (and not just
+telnet) the "protocol" implemented by the daemon is most easily used by
+telnet.
+
+Shameless Plug
+--------------
+
+You can find AweMUD, a powerful Open Source MUD server, and other projects
+by AwesomePlay Productions, Inc. at the AweMUD.net website, located at:
+
+  http://www.awemud.net
+
+Setting Up the Proxy
+--------------------
+
+First off, you must compile the source file to a binary.  You will need to
+link in your system's PThreads library.  (Use -lpthread on most systems.)
+The daemon assumes a fairly modern and up-to-date POSIX implementation is
+available on your host.  OS X in particular will not be able to compile the
+daemon without modification.
+
+You can specify the daemon's port, maximum allowed clients, host list file,
+and other options on the command line.
+
+The following options are supported:
+ -p <port>   port to listen on (default 9596)
+ -h <file>   file to read allowed hosts list (default hosts.txt)
+ -c <max>    maximum allowed clients (default 50)
+ -m <max>    maximum clients from one address (default 3)
+ -l <file>   log file (default standard error)
+ -w <file>   write pid to file (default off)
+ -d          daemonize on start (default off)
+ -6          enable IPv6 (default off)
+ -t <time>   connect timeout in seconds (default 30)
+ -a <time>   activity timeout in seconds (default 900)
+ -u <user>   change to the given user after initialization
+ -g <group>  change to the given group after initiatization
+ --help      display usage statement
+
+The host list file is a simple text file with one entry per line.  Each entry
+is in the form <host>:<port> where <host> is the hostname and <port> is the
+port number.  Users will only be able to connect to the host/port combinations
+listed in this file.  Any attempt to use the proxy to connect to a non-listed
+host/port combinatino will fail.
+
+You must pass -6 flag to the server to enable IPv6 runtime support.
+
+To start the daemon, use a command line similar to the following:
+
+./proxy -l proxy.log -w proxy.pid -d
+
+The proxy can be told to reload the host list and deny list files by sending
+it a SIGHUP signal.
+
+kill -HUP $(cat proxy.pid)
+
+Shutting down the proxy is as easy as the following command.
+
+kill $(cat proxy.pid)
+
+(NOTE: you must provide the -w proxy.pid arguments to the proxy to get the
+proxy.pid file.)
+
+An alternate binary, proxy-debug, is also built by the Makefile.  This binary
+has full debugging support compiled in.  It is not recommended to run the
+debug binary for normal usage.  If you are having problems with the proxy,
+however, the debug binary can provide useful information to track down the
+problem.
+
+Using the Proxy (Client)
+------------------------
+
+In order to use the proxy, clients need to connect to the proxy host on the
+proxy's port.  (Default 9596.)  Once connected, they must tell the proxy
+where they wish to connect.
+
+This is currently done using a command line in the following format:
+connect <host> <port>
+
+The user should replace <host> and <port> with the hostname and port they wish
+to connect to.  They can only connect to a host/port combination which the
+proxy server is configured to allow.  Additional whitespace should not be
+added.
+
+Implementation Notes
+--------------------
+
+The server makes use of the PThreads interface.  Each client is given its own
+thread.  The only real reason for the multi-threaded behaviour is because the
+connect() call used when the proxy establishes a connection to a remote server
+for a client may take a long time to complete, and we do not want the entire
+proxy server to hang for all users while this happens.
+
+The server uses the poll system call in favor of select.  Some UNIX systems,
+such as Mac OS X, do not support poll.  There are, however, libraries
+available which provide poll implementations that wrap the select system call
+for these systems.  Modifying the daemon to use such a library should not be
+difficult at all.  In many cases, it may only require linking the proxy
+against an additional library.
+
+The server also requires struct sockaddr_storage, getnameinfo, getaddrinfo,
+inet_ntop, inet_pton, and several other functions which are generally only
+available on IPv6 enabled operating systems.  The server does not need
+IPv6 runtime support to compile, but the OS libraries will need to have
+IPv6 support in order to build the server.
+
+TODO List
+---------
+
+- Nothing!  We're feature complete.  Rock on, party at my place! ;-)

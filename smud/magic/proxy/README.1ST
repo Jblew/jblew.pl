@@ -1,0 +1,8 @@
+This is the official supported proxy server of MudMagic.Com for the Java 
+Telnet Mud Client for websites. Use this proxy to allow your visitors to 
+connect to muds that are not hosted on the same host that your applet is 
+running.
+
+If you are using the default MudMagic Game List and Top Mud List. You can 
+download the up-to-date hosts.txt file with the following command line:
+lynx -source http://www.mudmagic.com/java-client/proxy/hosts.txt>hosts.txt

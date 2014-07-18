@@ -1,0 +1,104 @@
+0.92:
+	
+	- Allow specifying of host to bind server socket to.
+	- Remove IPv4/IPv6-specific login in
+	  create_listen_sock().
+	- Use only one server socket.
+
+0.91:
+
+	- Avoid errors on attempting to send data to the client
+	  if they were disconnected during a read
+	- Don't require the POLLOUT flag to attempt to send out
+	  data, but do make the send() call non-blocking, for
+	  better performance
+	  
+0.90:
+
+	- Fix linked list setup in client_add()
+	- Automatically strip the proxy (non-debug) binary
+
+0.17:
+
+	- Updated Makefile to build a proxy binary with no debug,
+	  and a proxy-debug binary with full debug
+	- Ignore blank lines in host and deny list files, don't
+	  complain about them
+	- Change ClientAddr to be a doubly linked list, that's
+	  where the lockups are happening
+
+0.16:
+
+	- Added easy Makefile method of disabling debugging info
+	- Added a log_dbg macro that requires macro varargs,
+	  allows compilation out the debug statements
+
+0.15:
+
+	- Added more debug messages
+
+0.14:
+
+	- Added tons of asserts
+	- Added debug log type
+	- Small cleanups
+	- Added a bunch of debug messages
+
+0.13:
+
+	- Added -u and -g options for dropping root privileges,
+	  useful to start server and bind to a port under 1024 or
+	  make root-owned log and pid files
+	- Remove USE_IPV6 build-time option
+
+0.12:
+
+	- Fix infinite loop when socket() fails in connect_to_server
+
+0.11:
+
+	- Update connect command parser
+
+0.10:
+
+	- Fix the log file locking to not dead-lock
+
+0.09:
+
+	- Activity timeouts
+	- Lock the log file during write (important...)
+
+0.08:
+
+	- Fix handling of errors when server socket creation
+	  fails
+	- Explicitly close the log file on shutdown
+	- Added connect timeout (option -t, default 30 seconds)
+	- Added maximum allowed clients per host (option -m, default 3)
+	- Enhanced option parsing
+
+0.07:
+
+	- Cleanup of main(), split into several functions
+	- Create both an IPv4 and IPv6 address, so IPv4 clients
+	  on an IPv6 enabled server are handled as IPv4
+	- Build with IPv6 support by default
+	- Added a -6 <bool> option for configuration IPv6 runtime
+	  support
+
+0.06:
+
+	- Better build configuration
+	- Improved logging system
+	- Print copyright/license notice on startup
+	- Improve formatting of IPv6 host/port pairs
+	- Change term from "allowed host" to "allowed server"
+	- Added banned client list
+	- Updated network code to use sockaddr_storage
+	- Make the global signal flags volatile
+	- Add timestamps to log messages
+
+0.05:
+
+	- Don't use strchr() on an unterminated character buffer
+

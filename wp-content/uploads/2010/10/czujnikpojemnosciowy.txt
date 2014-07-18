@@ -1,0 +1,30 @@
+#define ANALOG_IN 0
+long numup = 0;
+long starttime = 0;
+long micstim = 0;
+int lastval = 0;
+int state = LOW;
+void setup() {
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  numup = 0;
+  starttime = millis();
+  while(millis() < starttime+200) {
+    int val = analogRead(0);
+    if(lastval <= 512 && val > 512) {
+      micstim = micros();
+    }
+    if(lastval > 512 && val <= 512) {
+      numup += micros() - micstim;
+    }
+    lastval = val;
+    delayMicroseconds(5);
+  }
+  float percent = float(numup)/float((millis()-starttime)*1000)*float(100);
+  Serial.println(percent);
+  if(percent > 13) digitalWrite(13, HIGH); //UWAGA!!! należy eksperymentalnie dobrać tę wartość
+  else digitalWrite(13, LOW);
+}
