@@ -20,7 +20,7 @@ spec:
         - image: gcr.io/jblewpl-kube/jblewplold-web
           name: www
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           resources: {}
       restartPolicy: Always
 status: {}
@@ -37,7 +37,7 @@ metadata:
 spec:
   ports:
     - name: "80"
-      port: 80
+      port: 8080
       targetPort: 80
   selector:
     io.kompose.service: www
