@@ -1,20 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: db
   name: db
+  labels:
+    app: jblewpl_website
 spec:
+  selector:
+    matchLabels:
+      app: jblewpl_website
+      tier: db
   replicas: 1
   strategy: {}
   template:
     metadata:
-      annotations:
-      creationTimestamp: null
       labels:
-        io.kompose.service: db
+        app: jblewpl_website
+        tier: db
     spec:
       containers:
         - env:
@@ -38,17 +39,14 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: db
   name: db
+  labels:
+    app: jblewpl_website
 spec:
   ports:
     - name: "3306"
       port: 3306
       targetPort: 3306
   selector:
-    io.kompose.service: db
-status:
-  loadBalancer: {}
+    app: jblewpl_website
+    tier: db
