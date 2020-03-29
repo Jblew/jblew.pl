@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+  name: db
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+      creationTimestamp: null
+      labels:
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_DATABASE
+              value: jblew_jblew
+            - name: MYSQL_PASSWORD
+              value: jblew_jblew
+            - name: MYSQL_ROOT_PASSWORD
+              value: jblew_jblew
+            - name: MYSQL_USER
+              value: jblew_jblew
+          image: gcr.io/jblewpl-kube/jblewplold-db
+          name: db
+          ports:
+            - containerPort: 3306
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+  name: db
+spec:
+  ports:
+    - name: "3306"
+  port: 3306
+  targetPort: 3306
+  selector:
+status:
+  loadBalancer: {}
