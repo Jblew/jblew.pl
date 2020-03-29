@@ -1,26 +1,27 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: www
   name: www
+  labels:
+    app: jblewpl_website
 spec:
+  selector:
+    matchLabels:
+      app: jblewpl_website
+      tier: www
   replicas: 1
   strategy: {}
   template:
     metadata:
-      annotations:
-      creationTimestamp: null
       labels:
-        io.kompose.service: www
+        app: jblewpl_website
+        tier: www
     spec:
       containers:
         - image: gcr.io/jblewpl-kube/jblewplold-web
           name: www
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           resources: {}
       restartPolicy: Always
 status: {}
@@ -29,17 +30,14 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: www
   name: www
+  labels:
+    app: jblewpl_website
 spec:
   ports:
     - name: "80"
-      port: 8080
+      port: 80
       targetPort: 80
   selector:
-    io.kompose.service: www
-status:
-  loadBalancer: {}
+    app: jblewpl_website
+    tier: www
