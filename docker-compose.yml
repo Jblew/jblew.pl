@@ -6,7 +6,7 @@ services:
     ports:
       - "8002:80"
     volumes:
-      - ./:/var/www/html/
+      - ./www:/var/www/html/
     links:
       - db
     networks:
