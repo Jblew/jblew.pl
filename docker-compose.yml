@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  www:
+    build: .
+    ports:
+      - "8002:80"
+    volumes:
+      - ./:/var/www/html/
+    links:
+      - db
+    networks:
+      - default
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: jblew_jblew
+      MYSQL_USER: jblew_jblew
+      MYSQL_PASSWORD: jblew_jblew
+      MYSQL_ROOT_PASSWORD: jblew_jblew
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - persistent:/var/lib/mysql
+    networks:
+      - default
+
+volumes:
+  persistent:
