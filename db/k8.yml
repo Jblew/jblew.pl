@@ -1,9 +1,10 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
   creationTimestamp: null
   labels:
+    io.kompose.service: db
   name: db
 spec:
   replicas: 1
@@ -13,6 +14,7 @@ spec:
       annotations:
       creationTimestamp: null
       labels:
+        io.kompose.service: db
     spec:
       containers:
         - env:
@@ -39,12 +41,14 @@ metadata:
   annotations:
   creationTimestamp: null
   labels:
+    io.kompose.service: db
   name: db
 spec:
   ports:
     - name: "3306"
-  port: 3306
-  targetPort: 3306
+      port: 3306
+      targetPort: 3306
   selector:
+    io.kompose.service: db
 status:
   loadBalancer: {}
