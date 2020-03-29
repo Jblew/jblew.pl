@@ -1,9 +1,10 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   annotations:
   creationTimestamp: null
   labels:
+    io.kompose.service: www
   name: www
 spec:
   replicas: 1
@@ -13,6 +14,7 @@ spec:
       annotations:
       creationTimestamp: null
       labels:
+        io.kompose.service: www
     spec:
       containers:
         - image: gcr.io/jblewpl-kube/jblewplold-web
@@ -30,12 +32,14 @@ metadata:
   annotations:
   creationTimestamp: null
   labels:
+    io.kompose.service: www
   name: www
 spec:
   ports:
     - name: "80"
-  port: 80
-  targetPort: 80
+      port: 80
+      targetPort: 80
   selector:
+    io.kompose.service: www
 status:
   loadBalancer: {}
