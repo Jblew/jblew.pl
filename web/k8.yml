@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+  name: www
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+      creationTimestamp: null
+      labels:
+    spec:
+      containers:
+        - image: gcr.io/jblewpl-kube/jblewplold-web
+          name: www
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  creationTimestamp: null
+  labels:
+  name: www
+spec:
+  ports:
+    - name: "80"
+  port: 80
+  targetPort: 80
+  selector:
+status:
+  loadBalancer: {}
