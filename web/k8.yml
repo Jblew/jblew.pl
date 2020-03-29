@@ -18,11 +18,10 @@ spec:
         tier: www
     spec:
       containers:
-        - image: gcr.io/jblewpl-kube/jblewplold-web
-          name: www
+        - name: hello-app
+          image: gcr.io/google-samples/hello-app:1.0
           ports:
-            - containerPort: 80
-          resources: {}
+            - containerPort: 8080
       restartPolicy: Always
 status: {}
 
@@ -30,14 +29,14 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
-  name: www
+  name: jblewpl-website-backend
   labels:
     app: jblewpl_website
 spec:
-  ports:
-    - name: "80"
-      port: 80
-      targetPort: 80
+  type: NodePort
   selector:
     app: jblewpl_website
     tier: www
+  ports:
+    - port: 8080
+      targetPort: 8080
