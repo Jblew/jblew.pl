@@ -18,10 +18,10 @@ spec:
         tier: www
     spec:
       containers:
-        - name: hello-app
-          image: gcr.io/google-samples/hello-app:1.0
+        - image: gcr.io/jblewpl-kube/jblewplold-web
+          name: www
           ports:
-            - containerPort: 8080
+            - containerPort: 80
       restartPolicy: Always
 status: {}
 
@@ -39,4 +39,4 @@ spec:
     tier: www
   ports:
     - port: 8080
-      targetPort: 8080
+      targetPort: 80
