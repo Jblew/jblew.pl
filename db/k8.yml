@@ -29,6 +29,7 @@ spec:
               value: jblew_jblew
           image: gcr.io/jblewpl-kube/jblewplold-db:latest
           name: db
+          imagePullPolicy: Always
           ports:
             - containerPort: 3306
           resources: {}

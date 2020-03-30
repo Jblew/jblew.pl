@@ -20,6 +20,7 @@ spec:
       containers:
         - image: gcr.io/jblewpl-kube/jblewplold-web:latest
           name: www
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
       restartPolicy: Always
