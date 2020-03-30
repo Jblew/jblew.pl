@@ -27,7 +27,7 @@ spec:
               value: jblew_jblew
             - name: MYSQL_USER
               value: jblew_jblew
-          image: gcr.io/jblewpl-kube/jblewplold-db
+          image: gcr.io/jblewpl-kube/jblewplold-db:latest
           name: db
           ports:
             - containerPort: 3306
