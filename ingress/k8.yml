@@ -15,6 +15,12 @@ spec:
           - backend:
               serviceName: jblewpl-website-backend
               servicePort: 8080
+    - host: www.jblew.pl
+      http:
+        paths:
+          - backend:
+              serviceName: jblewpl-website-backend
+              servicePort: 8080
 
 ---
 apiVersion: networking.gke.io/v1beta1
