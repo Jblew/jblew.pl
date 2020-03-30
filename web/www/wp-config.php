@@ -93,8 +93,10 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-	define( 'WP_HOME', 'http://localhost:8002' );
-	define( 'WP_SITEURL', 'http://localhost:8002' );
+	define( 'WP_HOME', 'http://35.201.70.248' );
+	define( 'WP_SITEURL', 'http://35.201.70.248' );
+	remove_action('template_redirect', 'redirect_canonical');
+
 
 /** Ustawia zmienne WordPressa i dołączane pliki. */
 require_once(ABSPATH . 'wp-settings.php');
