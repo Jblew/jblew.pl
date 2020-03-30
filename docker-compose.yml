@@ -2,17 +2,15 @@ version: "3.3"
 
 services:
   www:
-    build: .
+    image: gcr.io/jblewpl-kube/jblewplold-web
     ports:
       - "8002:80"
-    volumes:
-      - ./www:/var/www/html/
     links:
       - db
     networks:
       - default
   db:
-    image: mysql:5.7
+    image: gcr.io/jblewpl-kube/jblewplold-db
     ports:
       - "3306:3306"
     environment:
@@ -21,10 +19,6 @@ services:
       MYSQL_PASSWORD: jblew_jblew
       MYSQL_ROOT_PASSWORD: jblew_jblew
     volumes:
-      - ./dump:/docker-entrypoint-initdb.d
-      - persistent:/var/lib/mysql
+      - db_volume:/var/lib/mysql
     networks:
       - default
-
-volumes:
-  persistent:
