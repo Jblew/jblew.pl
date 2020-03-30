@@ -93,9 +93,8 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-	define( 'WP_HOME', 'http://35.201.70.248' );
-	define( 'WP_SITEURL', 'http://35.201.70.248' );
-	remove_action('template_redirect', 'redirect_canonical');
+define( 'WP_HOME', 'https://jblew.pl' );
+define( 'WP_SITEURL', 'https://jblew.pl' );
 
 
 /** Ustawia zmienne WordPressa i dołączane pliki. */
