@@ -4,9 +4,23 @@ metadata:
   name: jblewpl-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: jblewpl-addr
+    networking.gke.io/managed-certificates: jblewpl-cert
   labels:
     app: jblewpl_website
 spec:
-  backend:
-    serviceName: jblewpl-website-backend
-    servicePort: 8080
+  rules:
+    - host: jblew.pl
+      http:
+        paths:
+          - backend:
+              serviceName: jblewpl-website-backend
+              servicePort: 8080
+
+---
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: jblewpl-cert
+spec:
+  domains:
+    - jblew.pl
