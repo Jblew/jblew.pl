@@ -9,7 +9,7 @@ function redirectTohttps() {
         $_SERVER['HTTPS'] = false;
     }
 
-    if($_SERVER['HTTPS']!="on" && strpos($_SERVER['HTTP_USER_AGENT'], 'Google HC') === false) {
+    if($_SERVER['HTTPS']!="on" && strpos($_SERVER['HTTP_USER_AGENT'], 'GoogleHC') === false) {
         $redirect= "https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header("Location: $redirect");
         exit();
